@@ -1,44 +1,94 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background */
 body {
-    font-family: Arial;
-    background: #222;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+/* Calculator Card */
 .calculator {
-    background: #333;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 25px;
+    width: 320px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
+/* Display */
 #display {
     width: 100%;
-    height: 50px;
-    font-size: 20px;
-    margin-bottom: 10px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
     text-align: right;
     padding: 10px;
+    margin-bottom: 15px;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    outline: none;
 }
 
+/* Buttons Grid */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
+/* Buttons */
 button {
     padding: 15px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
-    background: #555;
-    color: white;
+    border-radius: 10px;
     cursor: pointer;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    transition: 0.2s ease;
+    backdrop-filter: blur(5px);
 }
 
+/* Hover Effect */
 button:hover {
-    background: #777;
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.05);
+}
+
+/* Special Buttons */
+button:nth-child(4n) {
+    background: #ff7a18;
+}
+
+button:nth-child(4n):hover {
+    background: #ff9a3c;
+}
+
+/* Equal Button */
+button:last-child {
+    background: #00c9ff;
+}
+
+button:last-child:hover {
+    background: #5be1ff;
+}
+
+/* Scientific Buttons */
+button:nth-last-child(-n+6) {
+    background: #6a11cb;
+}
+
+button:nth-last-child(-n+6):hover {
+    background: #8e2de2;
 }
